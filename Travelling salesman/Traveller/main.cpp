@@ -48,7 +48,7 @@ public:
 	}
 	void ReadyaddVertex(const T& vertex) {
 		if (isFull()) {
-			cout << "Кол-во вершин превышает максимум." << endl;
+			cout << "РљРѕР»-РІРѕ РІРµСЂС€РёРЅ РїСЂРµРІС‹С€Р°РµС‚ РјР°РєСЃРёРјСѓРј." << endl;
 			return;
 		}
 		vertexList.push_back(vertex);
@@ -56,7 +56,7 @@ public:
 	}
 	void addVertex(const T& vertex) {
 		if (isFull()) {
-			cout << "Кол-во вершин превышает максимум." << endl;
+			cout << "РљРѕР»-РІРѕ РІРµСЂС€РёРЅ РїСЂРµРІС‹С€Р°РµС‚ РјР°РєСЃРёРјСѓРј." << endl;
 			return;
 		}
 		vertexList.push_back(vertex);
@@ -85,7 +85,7 @@ public:
 		int Pos_vfirst = GetPos(vfirst);
 		int Pos_vsecond = GetPos(vsecond);
 		if (Pos_vfirst == -1 || Pos_vsecond == -1) {
-			cout << "Нет узла в графе " << endl;
+			cout << "РќРµС‚ СѓР·Р»Р° РІ РіСЂР°С„Рµ " << endl;
 			return 0;
 		}
 		return matrix[Pos_vfirst][Pos_vsecond];
@@ -109,17 +109,17 @@ public:
 			int vertPos2 = GetPos(vertex2);
 
 			if (matrix[vertPos1][vertPos2] != 0 && matrix[vertPos2][vertPos1] != 0) {
-				cout << "Ребро уже есть" << endl;
+				cout << "Р РµР±СЂРѕ СѓР¶Рµ РµСЃС‚СЊ" << endl;
 				return;
 			}
 			else {
-				matrix[vertPos1][vertPos2] = weight;   //1 для ориентированного графа
-				matrix[vertPos2][vertPos1] = weight; //1,2 для неориентированного графа
+				matrix[vertPos1][vertPos2] = weight;   //1 РґР»СЏ РѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РіСЂР°С„Р°
+				matrix[vertPos2][vertPos1] = weight; //1,2 РґР»СЏ РЅРµРѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РіСЂР°С„Р°
 
 			}
 		}
 		else {
-			cout << "Одной из вершин нет в графе" << endl;
+			cout << "РћРґРЅРѕР№ РёР· РІРµСЂС€РёРЅ РЅРµС‚ РІ РіСЂР°С„Рµ" << endl;
 			return;
 		}
 
@@ -131,14 +131,14 @@ public:
 			int vertPos2 = GetPos(vertex2);
 
 			if (matrix[vertPos1][vertPos2] != 0 && matrix[vertPos2][vertPos1] != 0) {
-				matrix[vertPos1][vertPos2] = 0;   //1 для ориентированного графа
-				matrix[vertPos2][vertPos1] = 0; //1,2 для неориентированного графа
+				matrix[vertPos1][vertPos2] = 0;   //1 РґР»СЏ РѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РіСЂР°С„Р°
+				matrix[vertPos2][vertPos1] = 0; //1,2 РґР»СЏ РЅРµРѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РіСЂР°С„Р°
 				return;
 			}
 
 		}
 		else {
-			cout << "Одной из вершин нет в графе" << endl;
+			cout << "РћРґРЅРѕР№ РёР· РІРµСЂС€РёРЅ РЅРµС‚ РІ РіСЂР°С„Рµ" << endl;
 			return;
 		}
 
@@ -164,7 +164,7 @@ public:
 	void PrintMatrix() {
 		if (!isEmpty()) {
 			cout << endl;
-			cout << "Матрица смежности: " << endl;
+			cout << "РњР°С‚СЂРёС†Р° СЃРјРµР¶РЅРѕСЃС‚Рё: " << endl;
 			cout << "-  ";
 			for (int i = 0; i < vertexList.size(); ++i) {
 				cout << vertexList[i] << "  ";
@@ -179,7 +179,7 @@ public:
 			}
 		}
 		else {
-			cout << "Граф пуст" << endl;
+			cout << "Р“СЂР°С„ РїСѓСЃС‚" << endl;
 		}
 	}
 	//oriented or not
@@ -194,11 +194,11 @@ public:
 				}
 			}
 		}
-		//return amount;        //для ориентированного графа
-		return amount / 2;  //для неориентированного графа
+		//return amount;        //РґР»СЏ РѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РіСЂР°С„Р°
+		return amount / 2;  //РґР»СЏ РЅРµРѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РіСЂР°С„Р°
 	}
 	void DFS(T& start, bool* visited) {
-		cout << "Вершина " << start << " пройдена" << endl;
+		cout << "Р’РµСЂС€РёРЅР° " << start << " РїСЂРѕР№РґРµРЅР°" << endl;
 		visited[GetPos(start)] = true;
 		vector<T> AdjVert = GetAdjVert(start);
 		for (int i = 0; i < AdjVert.size(); ++i) {
@@ -257,7 +257,7 @@ public:
 		{
 			if (distances[i] != INT_MAX)
 			{
-				cout << "Вес: " << start << " ~> " << i << " = " << setw(6) << left << distances[i] << "\t";
+				cout << "Р’РµСЃ: " << start << " ~> " << i << " = " << setw(6) << left << distances[i] << "\t";
 
 				unsigned end = i;
 				unsigned weight = distances[end];
@@ -281,7 +281,7 @@ public:
 					}
 				}
 
-				cout << "Путь: ";
+				cout << "РџСѓС‚СЊ: ";
 
 				for (int j = way.length() - 5; j >= 0; --j)
 					cout << way[j];
@@ -289,7 +289,7 @@ public:
 				cout << endl;
 			}
 			else
-				cout << "Вес: " << start << " ~ " << i << " = " << "маршрут недоступен" << endl;
+				cout << "Р’РµСЃ: " << start << " ~ " << i << " = " << "РјР°СЂС€СЂСѓС‚ РЅРµРґРѕСЃС‚СѓРїРµРЅ" << endl;
 		}
 		delete[] Visited;
 		delete[] distances;
@@ -445,7 +445,7 @@ void branchAndBoundMethod()
 	}
 }
 void printRoad() {
-	cout << "Лучший маршрут:\n";
+	cout << "Р›СѓС‡С€РёР№ РјР°СЂС€СЂСѓС‚:\n";
 	int begin = 0;
 	for (int i = 0; i < paths.size(); i++) {
 		for (int j = 0; j < paths.size(); j++) {
@@ -476,18 +476,18 @@ void printRoad() {
 			break;
 		}
 	if (!hasRoad)
-		cout << "\nЗадача не имеет решения\n";
+		cout << "\nР—Р°РґР°С‡Р° РЅРµ РёРјРµРµС‚ СЂРµС€РµРЅРёСЏ\n";
 	cout << endl;
 }
 void printPaths(vector<vector<int> > matrix) {
-	cout << "Пути из одной вершины в другую:" << endl;
+	cout << "РџСѓС‚Рё РёР· РѕРґРЅРѕР№ РІРµСЂС€РёРЅС‹ РІ РґСЂСѓРіСѓСЋ:" << endl;
 	for (int i = 0; i < paths.size(); i++)
 		cout << paths[i].first + 1 << " ~> " << paths[i].second + 1
 		<< " = " << matrix[paths[i].first][paths[i].second] << endl;
 }
 void summaPaths(vector<vector<int> > matrix) {
 	int sum = 0;
-	cout << "Длина маршрута:\n";
+	cout << "Р”Р»РёРЅР° РјР°СЂС€СЂСѓС‚Р°:\n";
 	for (int i = 0; i < paths.size(); i++)
 		sum += matrix[paths[i].first][paths[i].second];
 	cout << sum << endl;
@@ -557,9 +557,9 @@ void setCoord(int i, int amountVert, vector<Node>& cities, Graph<int> graph)
 }
 int getValue()
 {
-	while (true) // Цикл продолжается до тех пор, пока пользователь не введет корректное значение
+	while (true) // Р¦РёРєР» РїСЂРѕРґРѕР»Р¶Р°РµС‚СЃСЏ РґРѕ С‚РµС… РїРѕСЂ, РїРѕРєР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅРµ РІРІРµРґРµС‚ РєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
 	{
-		std::cout << "Введите целое значение: ";
+		std::cout << "Р’РІРµРґРёС‚Рµ С†РµР»РѕРµ Р·РЅР°С‡РµРЅРёРµ: ";
 
 		int a;
 		bool flag = true;
@@ -807,23 +807,23 @@ int main()
 						int vertex, initialVertex, endVertex;
 						int answer = 0;
 						while (answer != 1 && answer != 2) {
-							cout << "Создать матрицу по-умолчанию? Если да, введите - 1, если нет - 2: "; answer = getValue();
+							cout << "РЎРѕР·РґР°С‚СЊ РјР°С‚СЂРёС†Сѓ РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ? Р•СЃР»Рё РґР°, РІРІРµРґРёС‚Рµ - 1, РµСЃР»Рё РЅРµС‚ - 2: "; answer = getValue();
 
 						}
 						if (answer == 2) {
-							cout << "Введите кол-во вершин графа: ";
+							cout << "Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ РІРµСЂС€РёРЅ РіСЂР°С„Р°: ";
 							amountVert = getValue();
 
-							cout << "Введите кол-во ребер графа: "; amountEdge = getValue();;
+							cout << "Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЂРµР±РµСЂ РіСЂР°С„Р°: "; amountEdge = getValue();;
 							for (int i = 0; i < amountVert; ++i) {
 								tempgraph.addVertex(i + 1);
-								cout << "Вершина " << i + 1 << " создана" << endl;
+								cout << "Р’РµСЂС€РёРЅР° " << i + 1 << " СЃРѕР·РґР°РЅР°" << endl;
 								setCoord(i, amountVert, tempcities, tempgraph);
 							}
 							for (int i = 0; i < amountEdge; ++i) {
-								cout << "Исходная вершина: "; initialVertex = getValue();;
-								cout << "Конечная вершина: "; endVertex = getValue();;
-								cout << "Вес ребра: "; edgeWeight = getValue();;
+								cout << "РСЃС…РѕРґРЅР°СЏ РІРµСЂС€РёРЅР°: "; initialVertex = getValue();;
+								cout << "РљРѕРЅРµС‡РЅР°СЏ РІРµСЂС€РёРЅР°: "; endVertex = getValue();;
+								cout << "Р’РµСЃ СЂРµР±СЂР°: "; edgeWeight = getValue();;
 								tempgraph.AddEdge(initialVertex, endVertex, edgeWeight);
 								Line connect;
 								connect.x1 = tempcities[tempgraph.GetPos(initialVertex)].xname;
@@ -897,7 +897,7 @@ int main()
 					if (x > 0 && y > 0 && x >= Addx && x <= Addx + AddW && y >= Addy && y <= Addy + AddH) {
 
 						if (graph.vertexList.size() == 20) {
-							cout << "Кол-во вершин превышает максимум (20)" << endl;
+							cout << "РљРѕР»-РІРѕ РІРµСЂС€РёРЅ РїСЂРµРІС‹С€Р°РµС‚ РјР°РєСЃРёРјСѓРј (20)" << endl;
 							break;
 						}
 						vector<Line> tempconnections;
@@ -909,7 +909,7 @@ int main()
 						if (graph.vertexList.size() != 0)graph.addVertex(*max_element(graph.vertexList.begin(), graph.vertexList.end()) + 1);
 						if (graph.vertexList.size() == 0)graph.addVertex(graph.vertexList.size() + 1);
 						int amountVert = graph.vertexList.size();
-						cout << "Вершина " << graph.vertexList.size() << " создана" << endl;
+						cout << "Р’РµСЂС€РёРЅР° " << graph.vertexList.size() << " СЃРѕР·РґР°РЅР°" << endl;
 						cities.clear();
 						connections.clear();
 						bestconnections.clear();
@@ -943,20 +943,20 @@ int main()
 					if (x > 0 && y > 0 && x >= Delx && x <= Delx + DelW && y >= Dely && y <= Dely + DelH) {
 						int delvert;
 						if (graph.vertexList.empty()) {
-							cout << "Вершин для удаления нет" << endl;
+							cout << "Р’РµСЂС€РёРЅ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ РЅРµС‚" << endl;
 							break;
 						}
 						vector<Line> tempconnections;
 						tempconnections = connections;
 						connections.clear();
-						cout << "Введите вершину, которую нужно удалить "; delvert = getValue();;
+						cout << "Р’РІРµРґРёС‚Рµ РІРµСЂС€РёРЅСѓ, РєРѕС‚РѕСЂСѓСЋ РЅСѓР¶РЅРѕ СѓРґР°Р»РёС‚СЊ "; delvert = getValue();;
 						bool t1 = false;
 						for (int i = 0; i < graph.vertexList.size(); ++i) {
 							if (graph.vertexList[i] == delvert)
 								t1 = true;
 						}
 						if (!t1) {
-							cout << "В графе нет данной вершины " << endl;
+							cout << "Р’ РіСЂР°С„Рµ РЅРµС‚ РґР°РЅРЅРѕР№ РІРµСЂС€РёРЅС‹ " << endl;
 							cities.clear();
 							connections.clear();
 							bestconnections.clear();
@@ -1052,17 +1052,17 @@ int main()
 					}
 					if (x > 0 && y > 0 && x >= DelEdgex && x <= DelEdgex + DelEdgeW && y >= DelEdgey && y <= DelEdgey + DelEdgeH) {
 						if (graph.vertexList.empty()) {
-							cout << "Ребер для удаления нет" << endl;
+							cout << "Р РµР±РµСЂ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ РЅРµС‚" << endl;
 							break;
 						}
 						if (graph.GetAmountEdges() == 0) {
-							cout << "Ребер для удаления нет" << endl;
+							cout << "Р РµР±РµСЂ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ РЅРµС‚" << endl;
 							break;
 						}
 						int deledge1, deledge2;
-						cout << "Введите первую вершину ребра для удаления "; deledge1 = getValue();;
+						cout << "Р’РІРµРґРёС‚Рµ РїРµСЂРІСѓСЋ РІРµСЂС€РёРЅСѓ СЂРµР±СЂР° РґР»СЏ СѓРґР°Р»РµРЅРёСЏ "; deledge1 = getValue();;
 						cout << endl;
-						cout << "Введите вторую вершину ребра для удаления "; deledge2 = getValue();;
+						cout << "Р’РІРµРґРёС‚Рµ РІС‚РѕСЂСѓСЋ РІРµСЂС€РёРЅСѓ СЂРµР±СЂР° РґР»СЏ СѓРґР°Р»РµРЅРёСЏ "; deledge2 = getValue();;
 						bool t1 = false;
 						bool t2 = false;
 						for (int i = 0; i < graph.vertexList.size(); ++i) {
@@ -1072,7 +1072,7 @@ int main()
 								t2 = true;
 						}
 						if (!t1 || !t2) {
-							cout << "В графе нет данного ребра" << endl;
+							cout << "Р’ РіСЂР°С„Рµ РЅРµС‚ РґР°РЅРЅРѕРіРѕ СЂРµР±СЂР°" << endl;
 							break;
 						}
 						else {
@@ -1112,15 +1112,15 @@ int main()
 					}
 					if (x > 0 && y > 0 && x >= AddEdgex && x <= AddEdgex + AddEdgeW && y >= AddEdgey && y <= AddEdgey + AddEdgeH) {
 						if (graph.vertexList.empty()) {
-							cout << "Вершин для добавления ребер нет" << endl;
+							cout << "Р’РµСЂС€РёРЅ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ СЂРµР±РµСЂ РЅРµС‚" << endl;
 							break;
 						}
 
 
 						int initialVertex, endVertex, edgeWeight;
-						cout << "Исходная вершина: "; initialVertex = getValue();;
-						cout << "Конечная вершина: "; endVertex = getValue();;
-						cout << "Вес ребра: "; edgeWeight = getValue();;
+						cout << "РСЃС…РѕРґРЅР°СЏ РІРµСЂС€РёРЅР°: "; initialVertex = getValue();;
+						cout << "РљРѕРЅРµС‡РЅР°СЏ РІРµСЂС€РёРЅР°: "; endVertex = getValue();;
+						cout << "Р’РµСЃ СЂРµР±СЂР°: "; edgeWeight = getValue();;
 						bool t1 = false;
 						bool t2 = false;
 						for (int i = 0; i < graph.vertexList.size(); ++i) {
@@ -1130,7 +1130,7 @@ int main()
 								t2 = true;
 						}
 						if (!t1 || !t2) {
-							cout << "В графе нет данной вершины " << endl;
+							cout << "Р’ РіСЂР°С„Рµ РЅРµС‚ РґР°РЅРЅРѕР№ РІРµСЂС€РёРЅС‹ " << endl;
 							break;
 						}
 						else {
