@@ -10,7 +10,7 @@ namespace calculator2 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -19,13 +19,13 @@ namespace calculator2 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm()
 		{
@@ -49,14 +49,14 @@ namespace calculator2 {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -76,7 +76,7 @@ namespace calculator2 {
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 16;
 			this->listBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"Бег", L"Плавание", L"Скалолазание", L"Велосипед",
+				L"Р‘РµРі", L"РџР»Р°РІР°РЅРёРµ", L"РЎРєР°Р»РѕР»Р°Р·Р°РЅРёРµ", L"Р’РµР»РѕСЃРёРїРµРґ",
 					L""
 			});
 			this->listBox1->Location = System::Drawing::Point(169, 12);
@@ -106,7 +106,7 @@ namespace calculator2 {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 23);
 			this->button1->TabIndex = 3;
-			this->button1->Text = L"Результат:";
+			this->button1->Text = L"Р РµР·СѓР»СЊС‚Р°С‚:";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -125,7 +125,7 @@ namespace calculator2 {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(146, 17);
 			this->label1->TabIndex = 7;
-			this->label1->Text = L"Введите время(мин):";
+			this->label1->Text = L"Р’РІРµРґРёС‚Рµ РІСЂРµРјСЏ(РјРёРЅ):";
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_1);
 			// 
 			// label2
@@ -135,7 +135,7 @@ namespace calculator2 {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(115, 17);
 			this->label2->TabIndex = 8;
-			this->label2->Text = L"Введите вес(кг):";
+			this->label2->Text = L"Р’РІРµРґРёС‚Рµ РІРµСЃ(РєРі):";
 			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
 			// 
 			// label3
@@ -145,7 +145,7 @@ namespace calculator2 {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(155, 17);
 			this->label3->TabIndex = 9;
-			this->label3->Text = L"Выберите вид спорта:";
+			this->label3->Text = L"Р’С‹Р±РµСЂРёС‚Рµ РІРёРґ СЃРїРѕСЂС‚Р°:";
 			this->label3->Click += gcnew System::EventHandler(this, &MyForm::label3_Click);
 			// 
 			// label4
@@ -155,7 +155,7 @@ namespace calculator2 {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(117, 17);
 			this->label4->TabIndex = 10;
-			this->label4->Text = L"Потрачено Ккал";
+			this->label4->Text = L"РџРѕС‚СЂР°С‡РµРЅРѕ РљРєР°Р»";
 			this->label4->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
 			// 
 			// MyForm
